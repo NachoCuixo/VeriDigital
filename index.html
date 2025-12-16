@@ -251,46 +251,86 @@
     </div>
   </section>
   <section id="Contacto" class="section">
-    <div class="container">
-      <h2 class="eyebrow">cuéntanos tu caso</h2>
-      <h2 class="h2-heading">Contacto</h2>
-      <p class="subheading">Estaremos encantados de escuchar tu caso y atender la petición.</p>
-      <div class="form-block w-form">
-        <form id="email-form"
-      name="email-form"
-      data-name="Email Form"
-      method="POST"
-      action="https://formspree.io/f/xzznlbzy"
-      data-wf-page-id="68245e0ef0fba30ae4a1bf5e"
-      data-wf-element-id="fb0068c9-f81e-64c6-ba37-e292d0256d8d">
+  <div class="container">
+    <h2 class="eyebrow">Cuéntanos tu caso</h2>
+    <h2 class="h2-heading">Contacto</h2>
+    <p class="subheading">
+      Estaremos encantados de escuchar tu caso y atender la petición.
+    </p>
 
-  <label for="name">Nombre</label>
-  <input class="text-field w-input" maxlength="256" name="nombre" data-name="Nombre" placeholder="" type="text" id="name" required>
+    <!-- Formulario -->
+    <div class="form-block">
+      <form
+        id="email-form"
+        name="email-form"
+        method="POST"
+        action="https://formspree.io/f/xzznlbzy"
+      >
 
-  <label for="email">Correo electrónico</label>
-  <input class="text-field-2 w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" required>
+        <label for="name">Nombre</label>
+        <input
+          class="text-field w-input"
+          maxlength="256"
+          name="nombre"
+          placeholder=""
+          type="text"
+          id="name"
+          required
+        >
 
-  <label for="Phone">Teléfono</label>
-  <input class="text-field-3 w-input" maxlength="256" name="telefono" data-name="Teléfono" placeholder="" type="tel" id="Phone">
+        <label for="email">Correo electrónico</label>
+        <input
+          class="text-field-2 w-input"
+          maxlength="256"
+          name="email"
+          placeholder=""
+          type="email"
+          id="email"
+          required
+        >
 
-  <label for="mensaje">Cuéntanos</label>
-  <textarea class="text-field-4 w-input" maxlength="5000" name="mensaje" data-name="Mensaje" placeholder="" id="mensaje" required></textarea>
+        <label for="Phone">Teléfono</label>
+        <input
+          class="text-field-3 w-input"
+          maxlength="256"
+          name="telefono"
+          placeholder=""
+          type="tel"
+          id="Phone"
+        >
 
-  <!-- Formspree extras -->
-  <input type="hidden" name="_subject" value="Nuevo lead — VeriDigital">
-  <input type="text" name="_gotcha" style="display:none">
+        <label for="mensaje">Cuéntanos</label>
+        <textarea
+          class="text-field-4 w-input"
+          maxlength="5000"
+          name="mensaje"
+          placeholder=""
+          id="mensaje"
+          required
+        ></textarea>
 
-  <input type="submit" data-wait="Please wait..." class="w-button" value="Enviar">
+        <!-- Formspree extras -->
+        <input type="hidden" name="_subject" value="Nuevo lead — VeriDigital">
+        <input type="text" name="_gotcha" style="display:none">
 
-</form>
+        <input
+          type="submit"
+          class="w-button"
+          value="Enviar"
+        >
 
-          <div>Thank you! Your submission has been received!</div>
-        </div>
-        <div class="w-form-fail">
-          <div>Oops! Something went wrong while submitting the form.</div>
-        </div>
-      </div>
+        <p style="font-size:12px; opacity:0.8; margin-top:12px;">
+          Al enviar este formulario aceptas que contactemos contigo para gestionar tu solicitud.
+          No compartiremos tus datos con terceros.
+        </p>
+
+      </form>
     </div>
+    <!-- /Formulario -->
+
+  </div>
+</section>
+
   </section>
   <footer class="footer inverse-footer">
     <div class="container">
