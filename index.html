@@ -256,8 +256,34 @@
       <h2 class="h2-heading">Contacto</h2>
       <p class="subheading">Estaremos encantados de escuchar tu caso y atender la petición.</p>
       <div class="form-block w-form">
-        <form id="email-form" name="email-form" data-name="Email Form" method="get" data-wf-page-id="68245e0ef0fba30ae4a1bf5e" data-wf-element-id="fb0068c9-f81e-64c6-ba37-e292d0256d8d"><label for="name">Nombre</label><input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name" required=""><label for="email">Correo electrónico</label><input class="text-field-2 w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" required=""><label for="Phone">Teléfono</label><input class="text-field-3 w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="" type="tel" id="Phone" required=""><label for="email-2">Cuéntanos</label><input class="text-field-4 w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" type="text" id="email-2"><input type="submit" data-wait="Please wait..." class="w-button" value="Enviar"></form>
-        <div class="w-form-done">
+        <form id="email-form"
+      name="email-form"
+      data-name="Email Form"
+      method="POST"
+      action="https://formspree.io/f/xzznlbzy"
+      data-wf-page-id="68245e0ef0fba30ae4a1bf5e"
+      data-wf-element-id="fb0068c9-f81e-64c6-ba37-e292d0256d8d">
+
+  <label for="name">Nombre</label>
+  <input class="text-field w-input" maxlength="256" name="nombre" data-name="Nombre" placeholder="" type="text" id="name" required>
+
+  <label for="email">Correo electrónico</label>
+  <input class="text-field-2 w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" required>
+
+  <label for="Phone">Teléfono</label>
+  <input class="text-field-3 w-input" maxlength="256" name="telefono" data-name="Teléfono" placeholder="" type="tel" id="Phone">
+
+  <label for="mensaje">Cuéntanos</label>
+  <textarea class="text-field-4 w-input" maxlength="5000" name="mensaje" data-name="Mensaje" placeholder="" id="mensaje" required></textarea>
+
+  <!-- Formspree extras -->
+  <input type="hidden" name="_subject" value="Nuevo lead — VeriDigital">
+  <input type="text" name="_gotcha" style="display:none">
+
+  <input type="submit" data-wait="Please wait..." class="w-button" value="Enviar">
+
+</form>
+
           <div>Thank you! Your submission has been received!</div>
         </div>
         <div class="w-form-fail">
