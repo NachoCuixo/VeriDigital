@@ -507,6 +507,64 @@ img, video { max-width: 100%; height: auto; }
 /* Si estás usando redirect (_redirect a gracias.html), NO quieres que Webflow
    intente manejar success/fail en la misma página. Esto minimiza efectos visuales. */
 .w-form-done, .w-form-fail { display: none; }
+/* =========================
+   HEADER / NAV — MOBILE FIX
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  /* La barra de navegación (Webflow suele usar .w-nav) */
+  .w-nav {
+    position: sticky; /* si no quieres sticky, cambia a: position: relative; */
+    top: 0;
+    z-index: 9999;
+    background: #fff; /* evita transparencias raras */
+  }
+
+  /* Contenedor interno del nav */
+  .w-nav .w-container,
+  .w-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Logo/brand (con texto) */
+  .w-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 48%;
+    z-index: 2;
+  }
+
+  /* Imagen del logo dentro del brand */
+  .w-nav-brand img {
+    height: 34px;        /* ajusta si quieres */
+    width: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Botón "Solicitar evaluación" (normalmente .w-button) */
+  .w-nav .w-button {
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1;
+    flex: 0 0 auto;
+    z-index: 2;
+  }
+
+  /* Hamburguesa */
+  .w-nav-button {
+    margin-left: 6px;
+    z-index: 3;
+  }
+}
+
 
 
 
