@@ -598,6 +598,140 @@ img, video { max-width: 100%; height: auto; }
     box-sizing: border-box;
   }
 }
+/* =========================
+   HEADER (MOBILE FIX)
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  /* Asegura que el contenedor de la cabecera sea flex y alinee todo */
+  .navbar,
+  .nav-bar,
+  .nav {
+    position: relative;
+    z-index: 999;
+  }
+
+  /* En Webflow suele ser .container dentro de la navbar */
+  .navbar .container,
+  .nav .container,
+  .nav-bar .container,
+  .nav-container,
+  .navigation-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+
+  /* Logo/brand por delante (evita que quede “detrás” del botón) */
+  .brand,
+  .navbar-brand,
+  .nav-brand {
+    position: relative !important;
+    z-index: 5 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    max-width: 46% !important; /* deja sitio al CTA */
+    overflow: hidden !important;
+  }
+
+  /* Imagen del logo: que no se coma el layout */
+  .brand img,
+  .navbar-brand img,
+  .nav-brand img {
+    height: 34px !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Si el texto “VeriDigital” va como texto, que no empuje */
+  .brand,
+  .navbar-brand,
+  .nav-brand {
+    white-space: nowrap !important;
+  }
+
+  /* Botón CTA: más pequeño en mobile */
+  .w-button,
+  .button,
+  .btn {
+    padding: 10px 12px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    border-radius: 8px !important;
+  }
+
+  /* Menú hamburguesa: que no quede pegado al borde derecho */
+  .menu-button,
+  .w-nav-button {
+    margin-left: 6px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    position: relative !important;
+    z-index: 6 !important;
+  }
+}
+/* =========================
+   FORM (MOBILE FIX)
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  /* Que el formulario ocupe el ancho del móvil */
+  #Contacto .form-block,
+  #Contacto .w-form,
+  #Contacto form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Inputs y textarea a 100% */
+  #Contacto input.w-input,
+  #Contacto textarea.w-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Textarea más grande para escribir cómodo */
+  #Contacto textarea {
+    min-height: 160px !important;
+    resize: vertical !important;
+  }
+
+  /* Botón a ancho completo (opcional pero suele quedar mejor) */
+  #Contacto input[type="submit"].w-button {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* Oculta el honeypot pase lo que pase */
+  #Contacto input[name="_gotcha"] {
+    display: none !important;
+  }
+
+  /* Checkbox alineado bonito */
+  #Contacto .privacy-row {
+    display: flex !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  #Contacto .privacy-row input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    margin-top: 3px !important;
+  }
+
+  #Contacto .privacy-row label {
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+}
+
 
 
 
