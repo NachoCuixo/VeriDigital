@@ -299,5 +299,35 @@ img, video { max-width: 100%; height: auto; }
     height: auto !important;
   }
 }
+/* =========================
+   HOTFIX: Formulario (no romper Webflow form messages)
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  /* El formulario debe conservar su layout propio */
+  #Contacto section *,
+  section#Contacto *,
+  #Contacto .w-form * {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Inputs y textarea sí deben ser full width */
+  #Contacto input[type="text"],
+  #Contacto input[type="email"],
+  #Contacto input[type="tel"],
+  #Contacto textarea {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Mensajes de Webflow: que se vean normales */
+  #Contacto .w-form-done,
+  #Contacto .w-form-fail {
+    display: none; /* los ocultamos, porque tú ya rediriges a /gracias.html */
+  }
+}
+
 
 
