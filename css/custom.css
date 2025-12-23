@@ -251,5 +251,53 @@ img, video { max-width: 100%; height: auto; }
     display: block !important;
   }
 }
+/* =========================
+   FIX QUIÉNES SOMOS (mobile) — fuerza 1 columna real
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  /* En móvil, cualquier layout de columnas basado en inline-block/float se rompe:
+     forzamos a que todo ocupe el 100% del ancho. */
+  section * {
+    float: none !important;
+  }
+
+  /* Wrapper típicos de Webflow que a veces van en inline-block */
+  section div,
+  section p,
+  section a,
+  section img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Evita que un contenedor se quede en 50% o 35% por culpa de una clase */
+  section [class*="col"],
+  section [class*="column"],
+  section [class*="Column"],
+  section [class*="half"],
+  section [class*="left"],
+  section [class*="right"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Texto: sin justificado raro ni spacing */
+  section p,
+  section [class*="text"],
+  section [class*="Text"] {
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    white-space: normal !important;
+  }
+
+  /* Imagen del bloque: centrada y con tamaño razonable */
+  section img {
+    margin: 16px auto 0 auto !important;
+    height: auto !important;
+  }
+}
 
 
