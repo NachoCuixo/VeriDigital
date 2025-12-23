@@ -100,3 +100,104 @@ img, video { max-width: 100%; height: auto; }
     font-size: 13px !important;
   }
 }
+/* =========================
+   AJUSTES MOBILE — VeriDigital
+   (pegar al final de custom.css)
+   ========================= */
+
+@media screen and (max-width: 767px) {
+
+  /* 1) Arreglo del texto “en columnas raras” / huecos entre palabras */
+  #Nosotros p,
+  #Nosotros .paragraph,
+  #Nosotros .text-block,
+  #Nosotros .rich-text,
+  #Nosotros .w-richtext,
+  #Nosotros .w-richtext p {
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+
+  /* Forzar 1 columna en grids (Webflow) dentro de Nosotros */
+  #Nosotros .w-layout-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-columns: 1fr !important;
+    column-gap: 16px !important;
+    row-gap: 24px !important;
+  }
+
+  /* Si el bloque "Nosotros" usa flex en horizontal, apílalo */
+  #Nosotros [class*="flex"],
+  #Nosotros [class*="wrapper"],
+  #Nosotros [class*="container"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* 2) Header: que el CTA no se coma el espacio del menú */
+  .w-nav {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .w-nav-brand {
+    max-width: 52% !important;
+  }
+
+  /* CTA (botón “Solicitar evaluación”) compacto en móvil */
+  .w-nav a.w-button,
+  .navbar a.w-button,
+  .w-button {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Menú hamburguesa con aire */
+  .w-nav-button {
+    margin-left: 10px !important;
+  }
+
+  /* 3) Sección Servicios / tarjetas: menos aire y alineación */
+  #Servicios .w-layout-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: 18px !important;
+  }
+
+  /* Imágenes dentro de tarjetas: que no queden gigantes */
+  #Servicios img {
+    border-radius: 16px !important;
+  }
+
+  /* Titulares más equilibrados */
+  h1 {
+    font-size: 40px !important;
+    line-height: 1.05 !important;
+  }
+
+  h2 {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Padding general secciones */
+  .section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+/* iPhone muy pequeño */
+@media screen and (max-width: 479px) {
+  .w-nav-brand { max-width: 48% !important; }
+
+  .w-nav a.w-button,
+  .w-button {
+    padding: 9px 10px !important;
+    font-size: 12.5px !important;
+  }
+}
+
