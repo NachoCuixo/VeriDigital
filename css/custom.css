@@ -200,4 +200,56 @@ img, video { max-width: 100%; height: auto; }
     font-size: 12.5px !important;
   }
 }
+/* =========================
+   FIX DEFINITIVO MOBILE (Webflow export)
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  /* 1) Mata cualquier grid en 2+ columnas (causa típica del texto estrecho) */
+  .w-layout-grid,
+  [class*="grid"],
+  [class*="Grid"]{
+    grid-template-columns: 1fr !important;
+    grid-auto-columns: 1fr !important;
+    column-gap: 16px !important;
+    row-gap: 24px !important;
+    justify-items: stretch !important;
+    align-items: start !important;
+  }
+
+  /* 2) Si algún bloque usa flex en horizontal, apílalo */
+  [class*="flex"],
+  [class*="Flex"],
+  [class*="wrap"],
+  [class*="Wrap"]{
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  /* 3) Anula anchos “fijos” que dejan el texto en una columna ridícula */
+  p, .text-block, .paragraph, .subheading,
+  .w-richtext, .w-richtext p,
+  [class*="text"], [class*="Text"]{
+    width: auto !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    white-space: normal !important;
+  }
+
+  /* 4) La imagen que acompaña al texto: centrada y con buen tamaño */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Si la imagen del bloque “Quiénes somos” está en una columna, que se centre */
+  .w-layout-grid img,
+  [class*="grid"] img {
+    margin: 0 auto !important;
+    display: block !important;
+  }
+}
+
 
