@@ -328,6 +328,186 @@ img, video { max-width: 100%; height: auto; }
     display: none; /* los ocultamos, porque tú ya rediriges a /gracias.html */
   }
 }
+/* =========================
+   FIXES MOBILE — VeriDigital
+   Pegar al FINAL de custom.css
+   ========================= */
+
+/* Evita desbordes horizontales */
+html, body { overflow-x: hidden; }
+* { box-sizing: border-box; }
+img, video { max-width: 100%; height: auto; }
+
+/* =========================
+   MOBILE (<= 767px)
+   ========================= */
+@media screen and (max-width: 767px) {
+
+  /* ---------- CABECERA / NAV ---------- */
+  /* Asegura que el header pueda “respirar” y no se monte el logo con el CTA */
+  .navbar,
+  .nav-bar,
+  .navigation,
+  .nav {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Si tu cabecera usa contenedor Webflow típico */
+  .navbar .container,
+  .nav .container,
+  .navigation .container,
+  .w-nav .w-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+
+  /* Logo más compacto en móvil (evita que invada el CTA) */
+  .brand,
+  .w-nav-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    max-width: 48% !important;
+    min-width: 0 !important;
+  }
+
+  /* Si el logo es imagen dentro del brand */
+  .brand img,
+  .w-nav-brand img {
+    width: 36px !important;
+    height: 36px !important;
+    object-fit: contain !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Texto del logo (si existe) que no empuje */
+  .brand, .w-nav-brand {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Botón principal en header (Solicitar evaluación) */
+  .navbar .w-button,
+  .w-nav .w-button,
+  a.w-button {
+    padding: 12px 14px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Si hay menú hamburguesa */
+  .menu-button,
+  .w-nav-button {
+    margin-left: 6px !important;
+    flex: 0 0 auto !important;
+  }
+
+
+  /* ---------- IMAGEN “Conoce nuestra experiencia” ---------- */
+  /* Esto recorta “bonito” en móvil para que no quede tan vertical */
+  /* (Ajusta el selector si tu imagen tiene una clase concreta) */
+  #Nosotros img,
+  #QuienesSomos img,
+  section#Nosotros img,
+  section#QuienesSomos img {
+    width: 100% !important;
+    max-height: 240px !important;   /* prueba 220–280 según te guste */
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+
+
+  /* ---------- BOTONES “Consúltanos / Servicios” ---------- */
+  /* Más consistentes en móvil */
+  .button-group,
+  .buttons,
+  .cta-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: stretch !important;
+  }
+
+  .button-group .w-button,
+  .buttons .w-button,
+  .cta-buttons .w-button {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
+  }
+
+
+  /* ---------- FORMULARIO (MÓVIL) ---------- */
+  /* Contenedor */
+  #Contacto .form-block.w-form {
+    width: 100% !important;
+  }
+
+  /* Form en columna y sin “cosas raras” */
+  #Contacto form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  /* Labels legibles (no partir “Correo electrónico” en mil líneas) */
+  #Contacto label {
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+  }
+
+  /* Inputs/textarea full width */
+  #Contacto input[type="text"],
+  #Contacto input[type="email"],
+  #Contacto input[type="tel"],
+  #Contacto textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    font-size: 16px !important; /* evita zoom raro en iOS */
+  }
+
+  #Contacto textarea {
+    min-height: 120px !important;
+    resize: vertical !important;
+  }
+
+  /* Botón enviar */
+  #Contacto input[type="submit"],
+  #Contacto button[type="submit"] {
+    width: 100% !important;
+    margin-top: 8px !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Mensajes success/error: que no ocupen media pantalla en móvil */
+  #Contacto .w-form-done > div,
+  #Contacto .w-form-fail > div {
+    padding: 12px 14px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* =========================
+   IMPORTANTE: Webflow + Formspree
+   Evita “Gracias” y “Error” a la vez
+   ========================= */
+/* Si estás usando redirect (_redirect a gracias.html), NO quieres que Webflow
+   intente manejar success/fail en la misma página. Esto minimiza efectos visuales. */
+.w-form-done, .w-form-fail { display: none; }
+
 
 
 
