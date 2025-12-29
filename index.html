@@ -432,6 +432,236 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   })();
 </script>
+<!-- ✅ VeriDigital Cookie Banner (manual) -->
+<style>
+  .vd-cookie-banner{
+    position: fixed;
+    left: 16px; right: 16px; bottom: 16px;
+    z-index: 9999;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.12);
+    padding: 14px 14px;
+    display: none;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .vd-cookie-row{
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .vd-cookie-text{
+    flex: 1 1 380px;
+    min-width: 260px;
+    font-size: 14px;
+    line-height: 1.35;
+    color: rgba(0,0,0,.78);
+  }
+  .vd-cookie-text strong{ color: rgba(0,0,0,.92); }
+  .vd-cookie-actions{
+    display: flex;
+    gap: 10px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .vd-cookie-btn{
+    border: 1px solid rgba(0,0,0,.14);
+    background: #fff;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+  }
+  .vd-cookie-btn.primary{
+    background: #1f4fff;
+    border-color: #1f4fff;
+    color: #fff;
+  }
+  .vd-cookie-btn.ghost{
+    background: transparent;
+  }
+  .vd-cookie-link{
+    color: rgba(0,0,0,.75);
+    text-decoration: underline;
+  }
+  .vd-cookie-panel{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,.08);
+    display: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .vd-cookie-toggles{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .vd-cookie-toggle{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    color: rgba(0,0,0,.80);
+  }
+  .vd-cookie-toggle input{ transform: scale(1.15); }
+  .vd-cookie-note{
+    font-size: 12px;
+    color: rgba(0,0,0,.62);
+  }
+  @media (max-width: 520px){
+    .vd-cookie-actions{ width: 100%; justify-content: flex-start; }
+    .vd-cookie-btn{ width: 100%; }
+  }
+</style>
+
+<div class="vd-cookie-banner" id="vdCookieBanner" role="dialog" aria-live="polite" aria-label="Preferencias de cookies">
+  <div class="vd-cookie-row">
+    <div class="vd-cookie-text">
+      <strong>Cookies</strong><br>
+      Usamos cookies necesarias para que el sitio funcione y, si lo aceptas, cookies de <strong>analítica</strong> (GA4) y de <strong>marketing</strong> (p. ej. retargeting en Google/Meta) para medir y mejorar resultados.
+      Consulta la <a class="vd-cookie-link" href="/privacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a>.
+    </div>
+
+    <div class="vd-cookie-actions">
+      <button class="vd-cookie-btn ghost" id="vdCookieReject" type="button">Rechazar</button>
+      <button class="vd-cookie-btn" id="vdCookieConfig" type="button">Configurar</button>
+      <button class="vd-cookie-btn primary" id="vdCookieAcceptAll" type="button">Aceptar todo</button>
+    </div>
+  </div>
+
+  <div class="vd-cookie-panel" id="vdCookiePanel">
+    <div class="vd-cookie-toggles">
+      <div class="vd-cookie-toggle">
+        <input type="checkbox" checked disabled>
+        <span>Necesarias (siempre)</span>
+      </div>
+
+      <label class="vd-cookie-toggle">
+        <input type="checkbox" id="vdConsentAnalytics">
+        <span>Analítica (GA4)</span>
+      </label>
+
+      <label class="vd-cookie-toggle">
+        <input type="checkbox" id="vdConsentMarketing">
+        <span>Marketing (retargeting)</span>
+      </label>
+    </div>
+
+    <div class="vd-cookie-actions">
+      <span class="vd-cookie-note">Puedes cambiarlo cuando quieras borrando cookies/datos del navegador.</span>
+      <button class="vd-cookie-btn primary" id="vdCookieSave" type="button">Guardar preferencias</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const KEY = "vd_consent";
+  const banner = document.getElementById("vdCookieBanner");
+  const panel  = document.getElementById("vdCookiePanel");
+
+  const btnAcceptAll = document.getElementById("vdCookieAcceptAll");
+  const btnReject    = document.getElementById("vdCookieReject");
+  const btnConfig    = document.getElementById("vdCookieConfig");
+  const btnSave      = document.getElementById("vdCookieSave");
+
+  const chkAnalytics = document.getElementById("vdConsentAnalytics");
+  const chkMarketing = document.getElementById("vdConsentMarketing");
+
+  function readConsent(){
+    try { return JSON.parse(localStorage.getItem(KEY) || ""); }
+    catch(e){ return null; }
+  }
+
+  function writeConsent(consent){
+    localStorage.setItem(KEY, JSON.stringify({
+      v: 1,
+      ts: Date.now(),
+      analytics: !!consent.analytics,
+      marketing: !!consent.marketing
+    }));
+
+    // DataLayer flags para GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "vd_consent_update",
+      vd_analytics_consent: !!consent.analytics,
+      vd_marketing_consent: !!consent.marketing
+    });
+  }
+
+  function hide(){
+    banner.style.display = "none";
+  }
+
+  function show(){
+    banner.style.display = "block";
+  }
+
+  function openPanel(){
+    panel.style.display = "flex";
+  }
+
+  function closePanel(){
+    panel.style.display = "none";
+  }
+
+  // Si ya hay consentimiento, no mostramos banner
+  const existing = readConsent();
+  if (!existing){
+    show();
+    closePanel();
+    chkAnalytics.checked = false;
+    chkMarketing.checked = false;
+  } else {
+    // Re-emite estado al cargar (útil si el usuario vuelve)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "vd_consent_update",
+      vd_analytics_consent: !!existing.analytics,
+      vd_marketing_consent: !!existing.marketing
+    });
+  }
+
+  btnAcceptAll.addEventListener("click", function(){
+    writeConsent({ analytics:true, marketing:true });
+    hide();
+  });
+
+  btnReject.addEventListener("click", function(){
+    writeConsent({ analytics:false, marketing:false });
+    hide();
+  });
+
+  btnConfig.addEventListener("click", function(){
+    openPanel();
+    // Si no existía, queda como está (false/false). Si existía, lo mostramos.
+    const c = readConsent();
+    if (c){
+      chkAnalytics.checked = !!c.analytics;
+      chkMarketing.checked = !!c.marketing;
+    }
+  });
+
+  btnSave.addEventListener("click", function(){
+    writeConsent({ analytics: chkAnalytics.checked, marketing: chkMarketing.checked });
+    hide();
+  });
+})();
+</script>
+<!-- ✅ End Cookie Banner -->
 
 </body>
 </html>
