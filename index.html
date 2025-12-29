@@ -302,72 +302,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="form-block">
       <form
-  id="email-form"
-  name="email-form"
-  method="POST"
-  action="https://formspree.io/f/xzznlbzy"
->
-  <label for="name">Nombre</label>
-  <input
-    class="text-field w-input"
-    maxlength="256"
-    name="nombre"
-    type="text"
-    id="name"
-    required
-  >
+        id="email-form"
+        name="email-form"
+        method="POST"
+        action="https://formspree.io/f/xzznlbzy"
+      >
+        <label for="name">Nombre</label>
+        <input
+          class="text-field w-input"
+          maxlength="256"
+          name="nombre"
+          type="text"
+          id="name"
+          required
+          aria-required="true"
+        >
 
-  <label for="email">Correo electrónico</label>
-  <input
-    class="text-field-2 w-input"
-    maxlength="256"
-    name="email"
-    type="email"
-    id="email"
-    required
-  >
+        <label for="email">Correo electrónico</label>
+        <input
+          class="text-field-2 w-input"
+          maxlength="256"
+          name="email"
+          type="email"
+          id="email"
+          required
+          aria-required="true"
+        >
 
-  <label for="phone">Teléfono</label>
-  <input
-    class="text-field-3 w-input"
-    maxlength="256"
-    name="telefono"
-    type="tel"
-    id="phone"
-  >
+        <label for="phone">Teléfono</label>
+        <input
+          class="text-field-3 w-input"
+          maxlength="256"
+          name="telefono"
+          type="tel"
+          id="phone"
+        >
 
-  <label for="mensaje">Cuéntanos</label>
-  <textarea
-    class="text-field-4 w-input"
-    maxlength="5000"
-    name="mensaje"
-    id="mensaje"
-    required
-  ></textarea>
+        <label for="mensaje">Cuéntanos</label>
+        <textarea
+          class="text-field-4 w-input"
+          maxlength="5000"
+          name="mensaje"
+          id="mensaje"
+          required
+          aria-required="true"
+        ></textarea>
 
-  <!-- ✅ Consentimiento RGPD -->
-  <div class="privacy-row">
-    <input type="checkbox" id="privacy" name="privacy" required>
-    <label for="privacy">
-      Acepto la
-      <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.
-    </label>
-  </div>
+        <!-- ✅ Consentimiento RGPD (obligatorio) -->
+        <div class="privacy-row">
+          <input
+            type="checkbox"
+            id="privacy"
+            name="privacy_policy"
+            value="accepted"
+            required
+            aria-required="true"
+          >
+          <label for="privacy">
+            Acepto la
+            <a href="/privacidad.html" target="_blank" rel="noopener noreferrer">
+              política de privacidad
+            </a>.
+          </label>
+        </div>
 
-  <!-- 🔐 Formspree extras -->
-  <input type="hidden" name="_subject" value="Nuevo contacto desde veridigital.net">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_redirect" value="https://veridigital.net/gracias.html">
-  <input type="text" name="_gotcha" style="display:none">
+        <!-- 🔐 Formspree extras -->
+        <input type="hidden" name="_subject" value="Nuevo contacto desde veridigital.net">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_redirect" value="https://veridigital.net/gracias.html">
+        <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1">
 
-  <input
-    type="submit"
-    data-wait="Enviando…"
-    class="w-button"
-    value="Enviar"
-  >
-</form>
-
+        <input
+          type="submit"
+          data-wait="Enviando…"
+          class="w-button"
+          value="Enviar"
+        >
+      </form>
     </div>
   </div>
 </section>
