@@ -18,7 +18,7 @@
   <meta name="description" content="Política de privacidad y tratamiento de datos personales de VeriDigital.">
   <link rel="canonical" href="https://veridigital.net/privacidad.html">
 
-  <!-- Open Graph / WhatsApp / LinkedIn -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VeriDigital">
   <meta property="og:url" content="https://veridigital.net/privacidad.html">
@@ -47,11 +47,7 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">
-    WebFont.load({
-      google: {
-        families: ["Instrument Sans:regular","Lexend:regular"]
-      }
-    });
+    WebFont.load({ google: { families: ["Instrument Sans:regular","Lexend:regular"] } });
   </script>
 
   <!-- Webflow helpers -->
@@ -72,40 +68,45 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Page-only styles (solo para maquetar la página de privacidad sin romper el look Webflow) -->
+  <!-- Page-only styles -->
   <style>
+    /* Cabecera estilo "index" (barra clara + borde) */
+    .vd-header {
+      background: #f2f2f0;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+    .vd-header-inner{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+    }
+    .vd-brand{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      color: #111;
+    }
+    .vd-brand-logo{
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display:block;
+    }
+    .vd-brand-text{
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    /* Contenido legal */
     .legal-wrap{
       max-width: 980px;
       margin: 0 auto;
-      padding: 28px 18px 60px;
-    }
-    .legal-topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:18px;
-    }
-    .legal-brand{
-      display:inline-flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color: inherit;
-    }
-    .legal-logo{
-      height: 44px;
-      width: auto;
-      display:block;
-      border-radius: 10px;
-    }
-    .legal-pill{
-      font-size:12px;
-      opacity: .7;
-      border: 1px solid rgba(0,0,0,.12);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
+      padding: 26px 18px 60px;
     }
     .legal-card{
       background:#fff;
@@ -144,12 +145,11 @@
       text-decoration:none;
       font-weight:600;
     }
-    /* Mobile */
+
     @media (max-width: 520px){
-      .legal-pill{ display:none; }
-      .legal-logo{ height: 38px; }
       .legal-card{ padding: 20px 16px; }
       .legal-card h1{ font-size: 24px; }
+      .vd-brand-text{ font-size: 16px; }
     }
   </style>
 </head>
@@ -163,14 +163,18 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="legal-wrap">
-    <div class="legal-topbar">
-      <a class="legal-brand" href="/" aria-label="Volver a VeriDigital">
-        <img class="legal-logo" src="/images/og-veridigital.jpg" alt="VeriDigital">
+  <!-- CABECERA (como index, sin menú) -->
+  <header class="vd-header">
+    <div class="vd-header-inner">
+      <a class="vd-brand" href="/" aria-label="Volver a VeriDigital">
+        <!-- Logo cuadrado (mejor que og-veridigital.jpg para cabecera) -->
+        <img class="vd-brand-logo" src="/images/webclip.png" alt="VeriDigital">
+        <span class="vd-brand-text">VeriDigital</span>
       </a>
-      <span class="legal-pill">Política de privacidad</span>
     </div>
+  </header>
 
+  <div class="legal-wrap">
     <main class="legal-card">
       <h1>Política de privacidad</h1>
       <p class="legal-lead">
