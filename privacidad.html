@@ -91,11 +91,12 @@
       color: #111;
     }
     .vd-brand-logo{
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      display:block;
-    }
+  height: 36px;
+  width: auto;
+  max-width: 160px;
+  display: block;
+  object-fit: contain;
+}
     .vd-brand-text{
       font-size: 18px;
       font-weight: 700;
@@ -167,10 +168,12 @@
   <header class="vd-header">
     <div class="vd-header-inner">
       <a class="vd-brand" href="/" aria-label="Volver a VeriDigital">
-        <!-- Logo cuadrado (mejor que og-veridigital.jpg para cabecera) -->
-        <img class="vd-brand-logo" src="/images/webclip.png" alt="VeriDigital">
-        <span class="vd-brand-text">VeriDigital</span>
-      </a>
+  <img
+    class="vd-brand-logo"
+    src="/images/og-veridigital.jpg"
+    alt="VeriDigital"
+  >
+</a>
     </div>
   </header>
 
