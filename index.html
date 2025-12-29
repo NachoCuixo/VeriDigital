@@ -302,83 +302,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="form-block">
       <form
-        id="email-form"
-        name="email-form"
-        method="POST"
-        action="https://formspree.io/f/xzznlbzy"
-      >
-        <label for="name">Nombre</label>
-        <input
-          class="text-field w-input"
-          maxlength="256"
-          name="nombre"
-          type="text"
-          id="name"
-          required
-          aria-required="true"
-        >
+  id="email-form"
+  name="email-form"
+  method="POST"
+  action="https://formspree.io/f/xzznlbzy"
+>
+  <label for="name">Nombre</label>
+  <input
+    class="text-field w-input"
+    maxlength="256"
+    name="nombre"
+    type="text"
+    id="name"
+    required
+  >
 
-        <label for="email">Correo electrónico</label>
-        <input
-          class="text-field-2 w-input"
-          maxlength="256"
-          name="email"
-          type="email"
-          id="email"
-          required
-          aria-required="true"
-        >
+  <label for="email">Correo electrónico</label>
+  <input
+    class="text-field-2 w-input"
+    maxlength="256"
+    name="email"
+    type="email"
+    id="email"
+    required
+  >
 
-        <label for="phone">Teléfono</label>
-        <input
-          class="text-field-3 w-input"
-          maxlength="256"
-          name="telefono"
-          type="tel"
-          id="phone"
-        >
+  <label for="phone">Teléfono</label>
+  <input
+    class="text-field-3 w-input"
+    maxlength="256"
+    name="telefono"
+    type="tel"
+    id="phone"
+  >
 
-        <label for="mensaje">Cuéntanos</label>
-        <textarea
-          class="text-field-4 w-input"
-          maxlength="5000"
-          name="mensaje"
-          id="mensaje"
-          required
-          aria-required="true"
-        ></textarea>
+  <label for="mensaje">Cuéntanos</label>
+  <textarea
+    class="text-field-4 w-input"
+    maxlength="5000"
+    name="mensaje"
+    id="mensaje"
+    required
+  ></textarea>
 
-        <!-- ✅ Consentimiento RGPD (obligatorio) -->
-        <div class="privacy-row">
-          <input
-            type="checkbox"
-            id="privacy"
-            name="privacy_policy"
-            value="accepted"
-            required
-            aria-required="true"
-          >
-          <label for="privacy">
-            Acepto la
-            <a href="/privacidad.html" target="_blank" rel="noopener noreferrer">
-              política de privacidad
-            </a>.
-          </label>
-        </div>
+  <!-- ✅ CONSENTIMIENTO OBLIGATORIO -->
+  <div class="privacy-row">
+    <input
+      type="checkbox"
+      id="privacy_required"
+      name="privacy_required"
+      value="accepted"
+      required
+    >
+    <label for="privacy_required">
+      He leído y acepto la
+      <a href="/privacidad.html" target="_blank" rel="noopener noreferrer">
+        política de privacidad
+      </a>
+      y consiento el tratamiento de mis datos para responder a mi solicitud.
+    </label>
+  </div>
 
-        <!-- 🔐 Formspree extras -->
-        <input type="hidden" name="_subject" value="Nuevo contacto desde veridigital.net">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_redirect" value="https://veridigital.net/gracias.html">
-        <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1">
+  <!-- ✅ CONSENTIMIENTO OPCIONAL MARKETING -->
+  <div class="privacy-row">
+    <input
+      type="checkbox"
+      id="privacy_marketing"
+      name="privacy_marketing"
+      value="accepted"
+    >
+    <label for="privacy_marketing">
+      Acepto recibir comunicaciones comerciales y el uso de mis datos con fines
+      de marketing, publicidad y retargeting en plataformas como Google, Meta,
+      LinkedIn u otras.
+    </label>
+  </div>
 
-        <input
-          type="submit"
-          data-wait="Enviando…"
-          class="w-button"
-          value="Enviar"
-        >
-      </form>
+  <!-- 🔐 FORMSpree -->
+  <input type="hidden" name="_subject" value="Nuevo contacto desde veridigital.net">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_redirect" value="https://veridigital.net/gracias.html">
+  <input type="text" name="_gotcha" style="display:none">
+
+  <input
+    type="submit"
+    data-wait="Enviando…"
+    class="w-button"
+    value="Enviar"
+  >
+</form>
+
     </div>
   </div>
 </section>
