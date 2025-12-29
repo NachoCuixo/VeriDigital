@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO -->
-  <meta name="description" content="Política de privacidad y tratamiento de datos personales de VeriDigital.">
+  <meta name="description" content="Política de privacidad y tratamiento de datos personales de VeriDigital (RGPD y LOPDGDD).">
   <link rel="canonical" href="https://veridigital.net/privacidad.html">
 
   <!-- Open Graph -->
@@ -23,18 +23,18 @@
   <meta property="og:site_name" content="VeriDigital">
   <meta property="og:url" content="https://veridigital.net/privacidad.html">
   <meta property="og:title" content="Política de privacidad | VeriDigital">
-  <meta property="og:description" content="Información sobre el tratamiento de datos personales, marketing y cookies en VeriDigital.">
-  <meta property="og:image" content="https://veridigital.net/images/og-veridigital.jpg">
+  <meta property="og:description" content="Información sobre el tratamiento de datos personales, comunicaciones comerciales y marketing (incluido retargeting) de VeriDigital.">
+  <meta property="og:image" content="https://veridigital.net/images/og-veridigital.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:type" content="image/png">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Política de privacidad | VeriDigital">
-  <meta name="twitter:description" content="Información sobre el tratamiento de datos personales, marketing y cookies en VeriDigital.">
-  <meta name="twitter:image" content="https://veridigital.net/images/og-veridigital.jpg">
+  <meta name="twitter:description" content="Información sobre el tratamiento de datos personales, comunicaciones comerciales y marketing (incluido retargeting) de VeriDigital.">
+  <meta name="twitter:image" content="https://veridigital.net/images/og-veridigital.png">
 
   <!-- Stylesheets (igual que index) -->
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -47,7 +47,9 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">
-    WebFont.load({ google: { families: ["Instrument Sans:regular","Lexend:regular"] } });
+    WebFont.load({
+      google: { families: ["Instrument Sans:regular","Lexend:regular"] }
+    });
   </script>
 
   <!-- Webflow helpers -->
@@ -68,210 +70,194 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Page-only styles -->
+  <!-- Ajustes específicos de esta página -->
   <style>
-    /* Cabecera estilo "index" (barra clara + borde) */
-    .vd-header {
-      background: #f2f2f0;
-      border-bottom: 1px solid rgba(0,0,0,.08);
-    }
-    .vd-header-inner{
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-    }
-    .vd-brand{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      text-decoration:none;
-      color: #111;
-    }
-    .vd-brand-logo{
-  height: 36px;
-  width: auto;
-  max-width: 160px;
-  display: block;
-  object-fit: contain;
-}
-    .vd-brand-text{
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: .2px;
-    }
-
-    /* Contenido legal */
+    /* Mantiene coherencia visual y mejora legibilidad del texto legal */
     .legal-wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 26px 18px 60px;
+      padding-top: 24px;
+      padding-bottom: 72px;
     }
     .legal-card{
-      background:#fff;
-      border:1px solid rgba(0,0,0,.08);
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.08);
       border-radius: 16px;
-      padding: 26px 22px;
+      padding: 28px 22px;
       box-shadow: 0 10px 30px rgba(0,0,0,.06);
     }
     .legal-card h1{
-      margin: 0 0 10px;
-      font-size: 28px;
-      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
     .legal-lead{
-      margin: 0 0 18px;
-      opacity: .75;
+      margin-top: 0;
+      opacity: .8;
     }
     .legal-card h2{
       margin-top: 26px;
       margin-bottom: 10px;
-      font-size: 18px;
+    }
+    .legal-card ul{
+      margin-top: 8px;
     }
     .legal-footer{
-      margin-top: 22px;
+      margin-top: 26px;
       padding-top: 16px;
       border-top: 1px solid rgba(0,0,0,.08);
-      display:flex;
+      display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      align-items:center;
+      align-items: center;
       justify-content: space-between;
       font-size: 13px;
-      opacity: .75;
+      opacity: .8;
     }
-    .legal-back{
-      text-decoration:none;
-      font-weight:600;
-    }
-
+    .legal-footer a{ text-decoration: none; }
     @media (max-width: 520px){
-      .legal-card{ padding: 20px 16px; }
-      .legal-card h1{ font-size: 24px; }
-      .vd-brand-text{ font-size: 16px; }
+      .legal-card{ padding: 22px 16px; }
     }
   </style>
 </head>
 
 <body>
-
   <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7S9ZJVQ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7S9ZJVQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- CABECERA (como index, sin menú) -->
-  <header class="vd-header">
-    <div class="vd-header-inner">
-      <a class="vd-brand" href="/" aria-label="Volver a VeriDigital">
-  <img
-    class="vd-brand-logo"
-    src="/images/og-veridigital.jpg"
-    alt="VeriDigital"
-  >
-</a>
-    </div>
-  </header>
-
-  <div class="legal-wrap">
-    <main class="legal-card">
-      <h1>Política de privacidad</h1>
-      <p class="legal-lead">
-        Información sobre el tratamiento de datos personales conforme al RGPD y la LOPDGDD.
-      </p>
-
-      <p>
-        En cumplimiento de lo dispuesto en el Reglamento (UE) 2016/679 (RGPD) y en la Ley Orgánica 3/2018 (LOPDGDD),
-        se informa a los usuarios sobre el tratamiento de sus datos personales.
-      </p>
-
-      <h2>1. Responsable del tratamiento</h2>
-      <p>
-        <strong>Responsable:</strong> VeriDigital<br>
-        <strong>Correo electrónico:</strong> <a href="mailto:ignaciomartipuertes@gmail.com">ignaciomartipuertes@gmail.com</a><br>
-        <strong>Sitio web:</strong> https://veridigital.net
-      </p>
-
-      <h2>2. Datos personales tratados</h2>
-      <ul>
-        <li>Datos identificativos y de contacto (nombre, correo electrónico, teléfono).</li>
-        <li>Información facilitada por el usuario a través del formulario de contacto.</li>
-        <li>Datos de navegación y comportamiento digital, obtenidos mediante cookies y tecnologías similares (cuando el usuario las acepte).</li>
-      </ul>
-
-      <h2>3. Finalidades del tratamiento</h2>
-      <ul>
-        <li>Atender consultas, solicitudes de información o contacto profesional.</li>
-        <li>Gestionar la relación comercial o profesional con el usuario.</li>
-        <li>Enviar comunicaciones informativas, comerciales o promocionales relacionadas con los servicios de VeriDigital, cuando el usuario lo consienta.</li>
-        <li>Realizar acciones de marketing digital, incluyendo análisis de comportamiento, segmentación de audiencias y campañas publicitarias, cuando el usuario lo consienta.</li>
-        <li>Mostrar publicidad personalizada y realizar acciones de remarketing/retargeting en plataformas de terceros como Google, Meta (Facebook/Instagram) u otras similares, cuando el usuario lo consienta.</li>
-      </ul>
-
-      <h2>4. Base legal del tratamiento</h2>
-      <ul>
-        <li><strong>Consentimiento</strong> del usuario al enviar el formulario y aceptar esta política de privacidad.</li>
-        <li><strong>Consentimiento específico</strong> para recibir comunicaciones comerciales y finalidades de marketing, cuando corresponda.</li>
-        <li><strong>Consentimiento</strong> para el uso de cookies analíticas y publicitarias (gestionado mediante el banner de cookies).</li>
-      </ul>
-
-      <p>
-        El usuario podrá retirar su consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento
-        basado en el consentimiento previo a su retirada.
-      </p>
-
-      <h2>5. Destinatarios, encargados y plataformas publicitarias</h2>
-      <p>
-        Los datos personales podrán ser tratados por proveedores tecnológicos (encargados del tratamiento) para la correcta prestación del servicio,
-        por ejemplo:
-      </p>
-      <ul>
-        <li>Servicios de analítica web (por ejemplo, Google Analytics).</li>
-        <li>Plataformas publicitarias y de remarketing (por ejemplo, Google Ads y Meta Ads).</li>
-        <li>Proveedores de formularios y mensajería (por ejemplo, Formspree u otros similares).</li>
-      </ul>
-
-      <p>
-        Algunos proveedores pueden estar ubicados fuera del Espacio Económico Europeo. En ese caso, las transferencias internacionales
-        se realizarán con las garantías adecuadas previstas por la normativa aplicable.
-      </p>
-
-      <h2>6. Conservación de los datos</h2>
-      <p>
-        Los datos se conservarán durante el tiempo necesario para atender la solicitud y, en su caso, durante los plazos legalmente exigidos,
-        o hasta que el usuario solicite su supresión.
-      </p>
-
-      <h2>7. Derechos del usuario</h2>
-      <p>
-        El usuario puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad,
-        así como retirar su consentimiento, solicitándolo a través del correo indicado.
-      </p>
-      <p>
-        Si considera que el tratamiento no se ajusta a la normativa vigente, puede presentar una reclamación ante la Agencia Española de Protección
-        de Datos (AEPD).
-      </p>
-
-      <h2>8. Medidas de seguridad</h2>
-      <p>
-        VeriDigital adopta medidas técnicas y organizativas razonables para garantizar la seguridad, confidencialidad e integridad de los datos.
-      </p>
-
-      <h2>9. Modificaciones de la política</h2>
-      <p>
-        Esta política puede actualizarse para adaptarse a cambios normativos o técnicos. Se recomienda revisarla periódicamente.
-      </p>
-
-      <div class="legal-footer">
-        <span><strong>Última actualización:</strong> diciembre de 2025</span>
-        <a class="legal-back" href="/">← Volver a la web</a>
+  <!-- NAV (igual que index, pero sin menú) -->
+  <div class="nav secondary-nav">
+    <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease"
+         data-collapse="medium" role="banner" data-no-scroll="1" class="nav-container w-nav">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo w-inline-block">
+          <div class="nav-logo-icon">
+            <svg width="100%" height="100%" viewBox="0 0 33 33" preserveAspectRatio="xMidYMid meet">
+              <path d="M28,0H5C2.24,0,0,2.24,0,5v23c0,2.76,2.24,5,5,5h23c2.76,0,5-2.24,5-5V5c0-2.76-2.24-5-5-5ZM29,17c-6.63,0-12,5.37-12,12h-1c0-6.63-5.37-12-12-12v-1c6.63,0,12-5.37,12-12h1c0,6.63,5.37,12,12,12v1Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="paragraph-lg utility-margin-bottom-0">VeriDigital</div>
+        </a>
       </div>
-    </main>
+    </div>
   </div>
 
+  <!-- CONTENIDO -->
+  <section class="section">
+    <div class="container legal-wrap">
+      <div class="legal-card">
+        <h1 class="h2-heading">Política de privacidad</h1>
+        <p class="legal-lead">
+          Información sobre el tratamiento de datos personales conforme al RGPD y la LOPDGDD.
+        </p>
+
+        <p>
+          En cumplimiento de lo dispuesto en el Reglamento (UE) 2016/679 (RGPD) y en la Ley Orgánica 3/2018 (LOPDGDD),
+          se informa a los usuarios sobre el tratamiento de sus datos personales.
+        </p>
+
+        <h2 class="h4-heading">1. Responsable del tratamiento</h2>
+        <p>
+          <strong>Responsable:</strong> VeriDigital<br>
+          <strong>Correo electrónico:</strong>
+          <a href="mailto:ignaciomartipuertes@gmail.com">ignaciomartipuertes@gmail.com</a><br>
+          <strong>Sitio web:</strong> https://veridigital.net
+        </p>
+
+        <h2 class="h4-heading">2. Datos personales tratados</h2>
+        <ul>
+          <li>Datos identificativos y de contacto (nombre, correo electrónico, teléfono).</li>
+          <li>Información facilitada por el usuario en formularios (por ejemplo, “Cuéntanos tu caso”).</li>
+          <li>Datos técnicos de navegación (por ejemplo, identificadores de cookies, páginas visitadas, eventos) cuando el usuario acepta cookies analíticas y/o publicitarias.</li>
+        </ul>
+
+        <h2 class="h4-heading">3. Finalidades del tratamiento</h2>
+        <ul>
+          <li>Gestionar y responder solicitudes enviadas a través del formulario de contacto.</li>
+          <li>Gestionar la relación profesional/comercial y realizar comunicaciones necesarias sobre el servicio.</li>
+          <li><strong>Comunicaciones comerciales y de marketing</strong> (por ejemplo, novedades, servicios, contenidos) cuando el usuario lo consienta.</li>
+          <li><strong>Marketing digital y analítica</strong> para mejorar el sitio, medir rendimiento y atribución, cuando el usuario lo consienta.</li>
+          <li><strong>Publicidad y retargeting</strong>: creación de audiencias, medición y campañas de remarketing/retargeting en plataformas de terceros
+              (por ejemplo, Google y Meta) cuando el usuario lo consienta.</li>
+        </ul>
+
+        <h2 class="h4-heading">4. Base jurídica del tratamiento</h2>
+        <ul>
+          <li><strong>Consentimiento</strong> del usuario (art. 6.1.a RGPD) al enviar el formulario y aceptar esta política de privacidad.</li>
+          <li><strong>Consentimiento específico</strong> para recibir comunicaciones comerciales y acciones de marketing, cuando corresponda.</li>
+          <li><strong>Consentimiento</strong> para el uso de cookies analíticas y/o publicitarias y tecnologías equivalentes (banner de cookies).</li>
+        </ul>
+        <p>
+          El usuario puede retirar su consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento
+          basado en el consentimiento previo a su retirada.
+        </p>
+
+        <h2 class="h4-heading">5. Destinatarios y encargados del tratamiento</h2>
+        <p>
+          Los datos podrán ser tratados por proveedores tecnológicos (encargados del tratamiento) necesarios para prestar el servicio y operar el sitio, por ejemplo:
+        </p>
+        <ul>
+          <li>Servicios de analítica y medición (por ejemplo, Google Analytics), cuando el usuario lo consienta.</li>
+          <li>Plataformas publicitarias y de remarketing (por ejemplo, Google Ads y Meta Ads), cuando el usuario lo consienta.</li>
+          <li>Servicios de formularios/gestión de envíos (por ejemplo, Formspree) para la recepción de solicitudes.</li>
+        </ul>
+        <p>
+          Algunos proveedores pueden estar ubicados fuera del Espacio Económico Europeo. En ese caso, las transferencias internacionales
+          se realizarán con las garantías adecuadas previstas por la normativa aplicable (por ejemplo, cláusulas contractuales tipo).
+        </p>
+
+        <h2 class="h4-heading">6. Plazos de conservación</h2>
+        <p>
+          Los datos se conservarán durante el tiempo necesario para atender la solicitud y, en su caso, durante los plazos legalmente exigidos,
+          o hasta que el usuario solicite su supresión o retire su consentimiento.
+        </p>
+
+        <h2 class="h4-heading">7. Derechos de las personas usuarias</h2>
+        <p>
+          El usuario puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad,
+          así como retirar su consentimiento, solicitándolo por correo electrónico a la dirección indicada.
+        </p>
+        <p>
+          Si considera que el tratamiento no se ajusta a la normativa, puede presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD).
+        </p>
+
+        <h2 class="h4-heading">8. Medidas de seguridad</h2>
+        <p>
+          VeriDigital aplica medidas técnicas y organizativas razonables para garantizar la seguridad, confidencialidad e integridad de los datos,
+          evitando su alteración, pérdida o acceso no autorizado.
+        </p>
+
+        <h2 class="h4-heading">9. Comunicaciones comerciales y consentimiento</h2>
+        <p>
+          Cuando el usuario presta su consentimiento para recibir comunicaciones comerciales, VeriDigital podrá enviarle información sobre servicios, contenidos,
+          novedades y acciones relacionadas. El usuario podrá darse de baja o retirar su consentimiento en cualquier momento mediante solicitud al correo indicado.
+        </p>
+
+        <h2 class="h4-heading">10. Publicidad, cookies y retargeting</h2>
+        <p>
+          Si el usuario acepta cookies publicitarias, se podrán utilizar tecnologías de medición y publicidad para mostrar anuncios más relevantes,
+          medir campañas y crear audiencias de remarketing/retargeting en plataformas como Google o Meta. El usuario podrá modificar o retirar su consentimiento
+          desde el banner/gestor de cookies (si está implementado) o mediante la configuración del navegador.
+        </p>
+
+        <h2 class="h4-heading">11. Cambios en la política</h2>
+        <p>
+          Esta política puede actualizarse para adaptarse a cambios normativos o técnicos. Se recomienda revisarla periódicamente.
+        </p>
+
+        <div class="legal-footer">
+          <span><strong>Última actualización:</strong> diciembre de 2025</span>
+          <a href="index.html">← Volver a la web</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts (igual que index) -->
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68245e0ef0fba30ae4a1bf3a"
+    type="text/javascript"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
 </body>
 </html>
+
