@@ -796,6 +796,8 @@ BLOG HERO
 
 padding-top:80px;
 padding-bottom:40px;
+overflow:visible;
+
 
 }
 
@@ -924,6 +926,51 @@ margin-right:auto;
 
 .blog-article p{
 max-width:70ch;
+}
+
+/* =========================
+BLOG MOBILE TYPOGRAPHY FIX
+========================= */
+
+.blog-article h2{
+
+font-size:20px;
+font-weight:600;
+line-height:1.35;
+
+}
+
+/* mobile */
+
+@media (max-width:767px){
+
+.blog-article h2{
+font-size:19px;
+line-height:1.35;
+}
+
+.blog-article p{
+font-size:16px;
+line-height:1.7;
+}
+
+}
+
+/* FIX menú mobile Webflow */
+
+.w-nav-menu{
+z-index:1000;
+}
+
+@media (max-width:991px){
+
+.w-nav-menu{
+position:fixed;
+top:70px;
+left:0;
+right:0;
+}
+
 }
 
 
