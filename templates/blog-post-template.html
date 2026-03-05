@@ -9,8 +9,24 @@
 <title>{{title}} | VeriDigital</title>
 
 <meta name="description" content="{{meta_description}}">
+<meta name="robots" content="index,follow">
 
 <link rel="canonical" href="https://veridigital.net/blog/{{slug}}.html">
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{meta_description}}">
+<meta property="og:url" content="https://veridigital.net/blog/{{slug}}.html">
+<meta property="og:image" content="https://veridigital.net/images/blog/{{image}}">
+
+<!-- Twitter / X -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{meta_description}}">
+<meta name="twitter:image" content="https://veridigital.net/images/blog/{{image}}">
 
 <link href="/css/normalize.css" rel="stylesheet">
 <link href="/css/webflow.css" rel="stylesheet">
@@ -78,17 +94,17 @@ VeriDigital
 {{title}}
 </h1>
 
-<img src="/images/blog/{{image}}" alt="{{title}}" class="cover-image blog-image">
+<img src="/images/blog/{{image}}" alt="{{keyword}}" class="cover-image blog-image">
 
 <p class="blog-intro">
-{{intro}}
+{{meta_description}}
 </p>
 
 </div>
 
 </section>
 
-<!-- CONTENIDO -->
+<!-- CONTENIDO DEL ARTÍCULO -->
 
 <section class="section">
 
@@ -96,7 +112,7 @@ VeriDigital
 
 <article class="blog-article">
 
-{{content}}
+{{article_html}}
 
 </article>
 
@@ -115,7 +131,7 @@ VeriDigital
 </h2>
 
 <p class="paragraph-lg">
-Analizamos actividad digital relevante para reforzar estrategias legales en casos de competencia desleal, propiedad intelectual o reputación digital.
+Analizamos actividad digital relevante para reforzar estrategias legales en casos de competencia desleal, propiedad intelectual, fraude digital o reputación online.
 </p>
 
 <div class="button-group">
@@ -149,6 +165,10 @@ Solicitar evaluación
 
 </div>
 
+</footer>
+
+</body>
+</html>
 </footer>
 
 </body>
