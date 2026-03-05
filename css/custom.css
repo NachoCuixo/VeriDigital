@@ -811,6 +811,45 @@ margin-bottom:30px;
 
 }
 
+/* =========================
+BLOG HEADER SPACING FIX
+========================= */
+
+/* reduce espacio entre navbar y contenido */
+
+.blog-nav{
+margin-top:20px;
+margin-bottom:10px;
+}
+
+/* reduce espacio del hero del artículo */
+
+.blog-hero{
+padding-top:30px;
+padding-bottom:30px;
+}
+
+/* ajusta título */
+
+.blog-title{
+margin-top:10px;
+margin-bottom:16px;
+}
+
+/* mejora spacing en móvil */
+
+@media (max-width:767px){
+
+.blog-hero{
+padding-top:20px;
+}
+
+.blog-nav{
+margin-top:10px;
+}
+
+}
+
 
 
 
