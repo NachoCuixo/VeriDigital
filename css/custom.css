@@ -914,7 +914,13 @@ margin-bottom:22px;
 
 }
 
+.blog-container{
 
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+
+}
 
 
 
