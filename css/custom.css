@@ -925,7 +925,7 @@ margin-right:auto;
 }
 
 .blog-article p{
-max-width:70ch;
+max-width:none;
 }
 
 /* =========================
@@ -973,7 +973,31 @@ right:0;
 
 }
 
+.blog-article{
 
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.blog-article p,
+.blog-article ul,
+.blog-article h2,
+.blog-article h3{
+
+max-width:none;
+
+}
+
+.blog-container{
+max-width:900px;
+margin:auto;
+}
+
+.blog-article{
+width:100%;
+}
 
 
 
