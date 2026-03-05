@@ -732,6 +732,26 @@ img, video { max-width: 100%; height: auto; }
   }
 }
 
+/* =========================
+BLOG NAV
+========================= */
+
+.blog-nav{
+margin-top:40px;
+margin-bottom:20px;
+}
+
+.blog-back{
+font-size:14px;
+text-decoration:none;
+color:#555;
+font-weight:500;
+}
+
+.blog-back:hover{
+text-decoration:underline;
+}
+
 
 
 
