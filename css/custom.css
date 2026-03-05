@@ -922,6 +922,10 @@ margin-right:auto;
 
 }
 
+.blog-article p{
+max-width:70ch;
+}
+
 
 
 
