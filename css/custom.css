@@ -850,6 +850,50 @@ margin-top:10px;
 
 }
 
+/* =========================
+BLOG TYPOGRAPHY
+Ladillos (H2) estilo editorial
+========================= */
+
+.blog-article h2{
+
+font-size:20px;      /* solo un poco más grande que el texto */
+line-height:1.35;
+
+font-weight:600;
+
+margin-top:32px;
+margin-bottom:12px;
+
+}
+
+/* texto del artículo */
+
+.blog-article p{
+
+font-size:17px;
+line-height:1.7;
+
+margin-bottom:16px;
+
+}
+
+/* listas */
+
+.blog-article ul{
+
+margin-top:10px;
+margin-bottom:20px;
+padding-left:20px;
+
+}
+
+.blog-article li{
+
+margin-bottom:6px;
+
+}
+
 
 
 
