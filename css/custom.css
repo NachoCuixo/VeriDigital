@@ -1017,5 +1017,17 @@ margin-left: auto;
 margin-right: auto;
 }
 
+.utility-max-width-md {
+max-width: 800px !important;
+margin-left: auto;
+margin-right: auto;
+}
+
+.blog-container {
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+}
+
 
 
