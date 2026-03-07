@@ -913,6 +913,8 @@ line-height:1.7;
 
 margin-top:20px;
 margin-bottom:22px;
+   text-align: justify;
+
 
 }
 
@@ -952,6 +954,7 @@ line-height:1.35;
 .blog-article p{
 font-size:16px;
 line-height:1.7;
+   text-align: justify;
 }
 
 }
