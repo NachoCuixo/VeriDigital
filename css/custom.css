@@ -965,17 +965,22 @@ line-height:1.7;
 z-index:1000;
 }
 
+/* =========================
+WEBFLOW MOBILE MENU FIX
+========================= */
+
 @media (max-width:991px){
 
 .w-nav-menu{
-position:fixed;
+position:absolute;
 top:70px;
 left:0;
 right:0;
+background:white;
+z-index:999;
 }
 
 }
-
 .blog-article{
 
 max-width:900px;
@@ -1065,27 +1070,41 @@ line-height:1.5;
 color:#666;
 }
 
-/* FORM MOBILE FIX */
+/* =========================
+FORM MOBILE LAYOUT FIX
+========================= */
 
-form input,
-form textarea,
-form select{
+@media (max-width:767px){
 
-width:100%;
-box-sizing:border-box;
-
-}
-
-form{
-
+#Contacto{
 padding-left:20px;
 padding-right:20px;
+}
+
+#Contacto .form-block,
+#Contacto .w-form{
+width:100%;
+max-width:100%;
+margin-left:auto;
+margin-right:auto;
+}
+
+#Contacto input,
+#Contacto textarea{
+width:100%;
+max-width:100%;
+}
 
 }
 
-.form-group{
+@media (max-width:767px){
 
-margin-bottom:16px;
-
+.blog-post-card h3{
+font-size:20px;
 }
 
+.blog-post-card p{
+font-size:15px;
+}
+
+}
