@@ -1065,3 +1065,27 @@ line-height:1.5;
 color:#666;
 }
 
+/* FORM MOBILE FIX */
+
+form input,
+form textarea,
+form select{
+
+width:100%;
+box-sizing:border-box;
+
+}
+
+form{
+
+padding-left:20px;
+padding-right:20px;
+
+}
+
+.form-group{
+
+margin-bottom:16px;
+
+}
+
